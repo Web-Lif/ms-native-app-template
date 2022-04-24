@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
-import { FiMinus, FiX } from 'react-icons/fi'
+import { VscChromeClose, VscChromeMinimize } from 'react-icons/vsc'
 import { ipcRenderer } from 'electron'
 
 const GlobalStyle = createGlobalStyle`
@@ -33,6 +33,7 @@ const Icon = styled.div`
     font-size: 16px;
     align-items: center;
     justify-content: center;
+    transition: background .5s;
     &:hover {
         background: hsla(0,0%,100%,.1);
     }
@@ -71,14 +72,14 @@ const BasicLayout: FC<BasicLayoutProps> = ({
                         ipcRenderer.send('window:minimize')
                     }}
                 >
-                    <FiMinus />
+                    <VscChromeMinimize />
                 </Icon>
                 <CloseWindow
                     onClick={() => {
                         ipcRenderer.send('window:close')
                     }}
                 >
-                    <FiX />
+                    <VscChromeClose />
                 </CloseWindow>
             </TopMenu>
             <Content>
