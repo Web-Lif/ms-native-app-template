@@ -35,7 +35,7 @@ const Icon = styled.div`
     justify-content: center;
     transition: background .5s;
     &:hover {
-        background: hsla(0,0%,100%,.1);
+        background: hsla(0, 0%, 100%, .1);
     }
 `
 
@@ -51,7 +51,7 @@ const Layout = styled.div`
 
 const CloseWindow = styled(Icon)`
     &:hover {
-        background: rgba(232,17,35,.9);
+        background: rgba(232, 17, 35, .9);
     }
 `
 
