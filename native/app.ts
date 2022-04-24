@@ -1,4 +1,5 @@
-import { app, BrowserWindow, ipcMain } from 'electron'
+import { app, BrowserWindow } from 'electron'
+import ipcMainWindowConfig from './controllers/window'
 
 const createWindow = () => {
     const win = new BrowserWindow({
@@ -18,14 +19,8 @@ const createWindow = () => {
     win.on('ready-to-show', () => {
         win.show()
     })
-
-    ipcMain.on('window:close', () => {
-        win.close()
-    })
     
-    ipcMain.on('window:minimize', () => {
-        win.minimize()
-    })
+    ipcMainWindowConfig(win)
 }
 
 
