@@ -1,7 +1,5 @@
 import React, { Suspense } from 'react'
 
-import '@weblif/fast-ui/es/app'
-
 const BasicLayout = React.lazy(() => import('./BasicLayout'))
 
 type LayoutProps = {

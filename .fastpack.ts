@@ -10,6 +10,7 @@ class WebpackChainPlugin {
         webpack.plugin('fastpack/ESLintPlugin').use(ESLintPlugin, [{
             extensions: ['.ts', '.tsx', '.js', '.jsx']
         }])
+        webpack.target('electron-renderer')
     }
 }
 
@@ -26,8 +27,5 @@ export default getFastpackConfig({
     plugins: [
         new FastpackPluginLessLoader({}),
         new WebpackChainPlugin()
-    ],
-    links: [
-        // 'test@http://127.0.0.1:8085/fastpack.share.js'
     ]
 })
