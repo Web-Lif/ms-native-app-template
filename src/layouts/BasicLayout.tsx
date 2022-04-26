@@ -5,8 +5,11 @@ import { ipcRenderer } from 'electron'
 
 const GlobalStyle = createGlobalStyle`
     body {
-        background: #252526;
-        color: #cccccc;
+        --global-bg-color: #252526;
+        --global-font-color: rgb(204, 204, 204);
+        --global-menu-bg-color: rgb(60, 60, 60);
+        --global-menu-hover-danger-bg-color: rgba(232, 17, 35, .9);
+        --global-menu-hover-normal-bg-color: hsla(0, 0%, 100%, .1); 
         margin: 0px;
     }
 `
@@ -15,8 +18,8 @@ const TopMenu = styled.div`
     display: flex;
     width: 100%;
     height: 30px;
-    color: rgb(204, 204, 204);
-    background-color: rgb(60, 60, 60);
+    color: var(--global-font-color);
+    background-color: var(--global-menu-bg-color);
 `
 
 const TopMenuSpac = styled.div`
@@ -35,7 +38,7 @@ const Icon = styled.div`
     justify-content: center;
     transition: background .5s;
     &:hover {
-        background: hsla(0, 0%, 100%, .1);
+        background: var(--global-menu-hover-normal-bg-color);
     }
 `
 
@@ -51,7 +54,7 @@ const Layout = styled.div`
 
 const CloseWindow = styled(Icon)`
     &:hover {
-        background: rgba(232, 17, 35, .9);
+        background: var(--global-menu-hover-danger-bg-color);
     }
 `
 
