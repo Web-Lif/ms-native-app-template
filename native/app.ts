@@ -13,7 +13,6 @@ const loadDevSource = async (win: BrowserWindow) => {
     for (;;) {
         try {
             const resp = await request.get('http://127.0.0.1:9080/')
-            console.log(resp.status)
             if (resp.status === 200) {
                 win.loadURL('http://localhost:9080')
                 return
