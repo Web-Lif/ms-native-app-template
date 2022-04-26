@@ -1,4 +1,5 @@
-const path = require('path');
+const path = require('path')
+
 module.exports = {
     entry: './app.ts',
     devtool: false,
@@ -12,7 +13,7 @@ module.exports = {
     mode: 'production',
     target: 'electron-main',
     resolve: {
-        extensions: ['.ts']
+        extensions: ['.ts', '.js']
     },
     output: {
         filename: 'main.bundle.js',

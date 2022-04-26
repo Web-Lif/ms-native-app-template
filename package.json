@@ -9,17 +9,18 @@
         "native:build:watch": "yarn workspace native build:watch",
         "native:build:pack": "yarn workspace native build:pack",
         "renderer:start": "fastpack dev",
-        "renderer:build": "cross-env fastpack build",
+        "renderer:build": "cross-env NODE_ENV=production fastpack build",
         "renderer:lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
         "renderer:test": "jest",
-        "release": "node .scripts/clean.js && yarn native:build:pack && yarn renderer:build && node .scripts/release.binary.js"
+        "release:build": "node .scripts/clean.js && yarn native:build:pack && yarn renderer:build",
+        "release:make": "node .scripts/release.binary.js"
     },
     "workspaces": [
         "native"
     ],
     "dependencies": {
         "@weblif/react-top-loading-bar": "^2.0.1",
-        "axios": "^0.26.1",
+        "axios": "^0.27.1",
         "date-fns": "^2.28.0",
         "dexie": "^3.0.3",
         "electron": "^18.1.0",
@@ -37,11 +38,14 @@
         "@types/react-router-dom": "^5.3.0",
         "@types/styled-components": "^5.1.25",
         "@weblif/configure": "^0.0.2",
-        "@weblif/fastpack": "^1.9.12-canary",
+        "@weblif/fastpack": "^1.10.0-canary",
         "@weblif/plugin-less-loader": "^2.3.9",
+        "ansi-colors": "^4.1.1",
+        "cli-progress": "^3.10.0",
         "concurrently": "^7.1.0",
         "cross-env": "^7.0.3",
         "eslint-webpack-plugin": "^3.0.1",
-        "fs-extra": "^10.1.0"
+        "fs-extra": "^10.1.0",
+        "jszip": "^3.9.1"
     }
 }

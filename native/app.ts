@@ -1,6 +1,7 @@
 import { app, BrowserWindow } from 'electron'
 import ipcMainWindowConfig from './controllers/window'
 import request from 'axios'
+
 const sleep = (time: number) => {
     return new Promise<void>((resolve) => {
         setTimeout(() => {
@@ -37,12 +38,17 @@ const createWindow = () => {
         backgroundColor: '#252526'
     })
 
-    loadDevSource(win)
-
-    win.on('ready-to-show', () => {
+    if (process.env.NODE_ENV === 'development') {
+        loadDevSource(win)
+        win.on('ready-to-show', () => {
+            win.show()
+        })
+    } else {
+        win.loadFile('www/index.html')
         win.show()
-    })
-    
+    }
+
+
     ipcMainWindowConfig(win)
 }
 

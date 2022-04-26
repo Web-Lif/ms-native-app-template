@@ -24,6 +24,10 @@ export default getFastpackConfig({
         loading: '/components/Loading',
         layout: '/layouts'
     },
+    publicPath: './',
+    history: {
+        type: 'memory'
+    },
     plugins: [
         new FastpackPluginLessLoader({}),
         new WebpackChainPlugin()
