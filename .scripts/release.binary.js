@@ -85,7 +85,7 @@ if (existsSync(join(resolve(__dirname), '..', '.build', 'resources', 'app'))) {
 if (existsSync(join(resolve(__dirname), '..', '.build'))) {
     copyBuildDistToApp()
 } else {
-    downloadElectron('electron-v18.1.0-win32-x64.zip').then(() => {
+    downloadElectron(process.env.ELECTRON_ZIP_NAME).then(() => {
         copyBuildDistToApp()
     })
 }
