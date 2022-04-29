@@ -4,7 +4,7 @@
     "version": "0.0.1-canary",
     "license": "MIT",
     "scripts": {
-        "start": "concurrently \"yarn renderer:start\" \"yarn native:build:watch\" \"yarn native:start\"",
+        "start": "yarn native:build:pack && concurrently \"yarn renderer:start\" \"yarn native:build:watch\" \"yarn native:start\"",
         "native:start": "yarn workspace native start",
         "native:build:watch": "yarn workspace native build:watch",
         "native:build:pack": "yarn workspace native build:pack",
@@ -28,17 +28,16 @@
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
         "react-icons": "^4.3.1",
-        "react-router-dom": "^5.3.0",
+        "react-router-dom": "^6.3.0",
         "styled-components": "^5.3.5"
     },
     "devDependencies": {
         "@types/pinyin": "^2.10.0",
         "@types/react": "^18.0.0",
         "@types/react-dom": "^18.0.0",
-        "@types/react-router-dom": "^5.3.0",
         "@types/styled-components": "^5.1.25",
         "@weblif/configure": "^0.0.2",
-        "@weblif/fastpack": "^1.10.0-canary",
+        "@weblif/fastpack": "^1.11.1-canary",
         "@weblif/plugin-less-loader": "^2.3.9",
         "ansi-colors": "^4.1.1",
         "cli-progress": "^3.10.0",

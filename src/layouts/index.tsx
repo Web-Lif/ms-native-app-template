@@ -1,16 +1,13 @@
 import React, { Suspense } from 'react'
+import { Outlet } from 'react-router-dom'
 
 const BasicLayout = React.lazy(() => import('./BasicLayout'))
 
-type LayoutProps = {
-    children?: React.ReactNode
-}
-
-const Layout = ({ children }: LayoutProps) => {
+const Layout = () => {
     return (
         <Suspense fallback={<div />}>
             <BasicLayout>
-                {children}
+                <Outlet />
             </BasicLayout>
         </Suspense>
     )
