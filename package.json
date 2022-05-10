@@ -13,7 +13,9 @@
         "renderer:lint": "eslint src --ext .js,.jsx,.ts,.tsx --fix",
         "renderer:test": "jest",
         "release:build": "node .scripts/clean.js && yarn native:build:pack && yarn renderer:build",
-        "release:make:window:win32x64": "cross-env ELECTRON_ZIP_NAME=electron-v18.1.0-win32-x64.zip node .scripts/release.binary.js"
+        "release:make:window:win32x64": "cross-env ELECTRON_ZIP_NAME=electron-v18.1.0-win32-x64.zip node .scripts/release.binary.js",
+        "release:make:window:linux-x64": "cross-env ELECTRON_ZIP_NAME=electron-v18.1.0-linux-x64.zip node .scripts/release.binary.js"
+
     },
     "workspaces": [
         "native"
