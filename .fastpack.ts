@@ -21,7 +21,7 @@ export default getFastpackConfig({
             '/',
         ],
         notFound: '/components/NotFound',
-        loading: '/components/Loading',
+        // loading: '/components/Loading',
         layout: '/layouts'
     },
     publicPath: './',

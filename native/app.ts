@@ -47,11 +47,10 @@ const createWindow = () => {
         win.loadFile('www/index.html')
         win.show()
     }
-
-
-    ipcMainWindowConfig(win)
 }
 
+
+ipcMainWindowConfig()
 
 app.whenReady().then(() => {
     createWindow()

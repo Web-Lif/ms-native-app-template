@@ -72,14 +72,14 @@ const BasicLayout: FC<BasicLayoutProps> = ({
                 <TopMenuSpac />
                 <Icon
                     onClick={() => {
-                        ipcRenderer.send('window:minimize')
+                        ipcRenderer.invoke('window/minimize')
                     }}
                 >
                     <VscChromeMinimize />
                 </Icon>
                 <CloseWindow
                     onClick={() => {
-                        ipcRenderer.send('window:close')
+                        ipcRenderer.invoke('window/close')
                     }}
                 >
                     <VscChromeClose />
