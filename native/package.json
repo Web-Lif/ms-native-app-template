@@ -13,12 +13,10 @@
     },
     "license": "MIT",
     "files": [
-        "controllers",
-        "app.ts"
+        "src"
     ],
     "dependencies": {
-        "axios": "0.27.2",
-        "sqlite3": "5.0.8"
+        "axios": "0.27.2"
     },
     "devDependencies": {
         "electron": "19.0.5",

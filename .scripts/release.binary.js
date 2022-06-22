@@ -7,7 +7,7 @@ const { green, red } = require('ansi-colors')
 
 
 const downloadElectron = async (name) => {
-    const url = `https://github.com/electron/electron/releases/download/v18.1.0/${name}`
+    const url = `https://github.com/electron/electron/releases/download/v19.0.5/${name}`
     
     const fileDownload = new Bar({
         format: 'Working | {bar} | {percentage}% || {value}/{total}',
