@@ -1,3 +1,4 @@
 {
-    "main": "main.bundle.js"
+    "main": "main.bundle.js",
+    "version": "0.0.1"
 }

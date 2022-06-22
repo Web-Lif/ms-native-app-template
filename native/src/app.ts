@@ -1,6 +1,7 @@
 import { app, BrowserWindow } from 'electron'
-import ipcMainWindowConfig from './controllers/window'
 import request from 'axios'
+
+import ipcMainWindowConfig from './controllers/window'
 
 const sleep = (time: number) => {
     return new Promise<void>((resolve) => {
@@ -48,7 +49,6 @@ const createWindow = () => {
         win.show()
     }
 }
-
 
 ipcMainWindowConfig()
 
