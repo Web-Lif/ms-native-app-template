@@ -14,7 +14,7 @@ import JSZip from 'jszip'
 import request from 'axios'
 import { join } from 'path'
 import { mkdir,  } from 'fs'
-import { outputFile, readFile, rename, rmSync } from 'fs-extra'
+import { copy, outputFile, readFile, rename, rmSync } from 'fs-extra'
 
 
 /**
@@ -41,7 +41,9 @@ export const upgrade = (url: string) => {
                         })
                     }
 
-                    rename(join(process.resourcesPath, 'app'), join(process.resourcesPath, '.old')).then(() => {
+                    copy(join(process.resourcesPath, 'app'), join(process.resourcesPath, '.old'), {
+                        recursive: true
+                    }).then(() => {
                         JSZip.loadAsync(buf).then((zip) => {
                             const files = zip.files || {}
                             const promises: Promise<unknown>[] = []
