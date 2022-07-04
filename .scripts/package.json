@@ -1,4 +1,7 @@
 {
     "main": "main.bundle.js",
-    "version": "0.0.1"
+    "version": "0.0.1",
+    "appSettings": {
+        "checkUpgradeURL": "http://127.0.0.1:8000"
+    }
 }

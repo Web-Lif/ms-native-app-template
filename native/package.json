@@ -8,18 +8,20 @@
         "start": "cross-env NODE_ENV=development electron .",
         "build": "tsc --project tsconfig.json",
         "build:pack": "webpack build --config ./.config/webpack.config.js",
-        "build:watch": "tsc --project tsconfig.json --watch",
-        "rebuild-sqlite3": "electron-rebuild -f -w sqlite3"
+        "build:watch": "tsc --project tsconfig.json --watch"
     },
     "license": "MIT",
     "files": [
         "src"
     ],
     "dependencies": {
-        "axios": "0.27.2"
+        "axios": "0.27.2",
+        "fs-extra": "10.1.0",
+        "jszip": "3.10.0"
     },
     "devDependencies": {
         "electron": "19.0.7",
+        "@types/fs-extra": "^9.0.13",
         "electron-rebuild": "3.2.7",
         "ts-loader": "9.3.1",
         "typescript": "4.7.4",
