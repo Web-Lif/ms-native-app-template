@@ -2,6 +2,7 @@ import { app, BrowserWindow } from 'electron'
 import request from 'axios'
 
 import ipcMainWindowConfig from './controllers/window'
+import { checkUpgrade } from './utils/upgrade'
 
 const sleep = (time: number) => {
     return new Promise<void>((resolve) => {
@@ -26,7 +27,7 @@ const loadDevSource = async (win: BrowserWindow) => {
     }
 }
 
-const createWindow = () => {
+const createWindow = async () => {
     const win = new BrowserWindow({
         width: 800,
         height: 600,
@@ -45,6 +46,7 @@ const createWindow = () => {
             win.show()
         })
     } else {
+        checkUpgrade()
         win.loadFile('www/index.html')
         win.show()
     }

@@ -14,8 +14,7 @@ import JSZip from 'jszip'
 import request from 'axios'
 import { join } from 'path'
 import { mkdir,  } from 'fs'
-import { copy, outputFile, readFile, rename, rmSync } from 'fs-extra'
-
+import { copy, outputFile, readFile, rmSync } from 'fs-extra'
 
 /**
  * 更新版本信息
@@ -72,10 +71,11 @@ export const upgrade = (url: string) => {
 }
 
 /** 检查版本信息, 并进行更新版本 */
-export const checkUpgrade = async (url: string) => {
-    const response = await request.get(url)
+export const checkUpgrade = async () => {
     const data = await readFile(join(process.resourcesPath, 'app', 'package.json'))
-    if (response.data?.binary && response.data.version !== JSON.parse(data.toString()).version) {
-        upgrade(response.data.binary )
+    const packageConfig = JSON.parse(data.toString())
+    const response = await request.get(packageConfig.appSettings?.checkUpgradeURL)
+    if (response.data?.binary && response.data.version !== packageConfig.version) {
+        await upgrade(response.data.binary)
     }
 }
