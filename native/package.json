@@ -20,7 +20,7 @@
         "jszip": "3.10.0"
     },
     "devDependencies": {
-        "electron": "19.0.9",
+        "electron": "19.0.10",
         "@types/fs-extra": "9.0.13",
         "electron-rebuild": "3.2.8",
         "ts-loader": "9.3.1",
